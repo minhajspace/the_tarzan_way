@@ -1,6 +1,6 @@
 import React from "react";
 import './login.css'
-
+import { withRouter } from "react-router";
 const soldier = {
     email: "soldier@thetarzanway.com",
     password: "soldier"
@@ -73,4 +73,4 @@ class Login extends React.Component {
 }
 
 
-export default Login;
+export default withRouter(Login);

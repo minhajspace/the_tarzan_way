@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { withRouter } from "react-router";
+
 const Soldier = () => {
     return (
 
@@ -25,4 +27,4 @@ const Soldier = () => {
 
 
 }
-export default Soldier;
+export default withRouter(Soldier);

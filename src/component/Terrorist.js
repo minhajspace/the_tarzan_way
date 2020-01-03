@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from "react-router";
 
 const Terrorist = () => {
     return (
@@ -18,4 +19,4 @@ const Terrorist = () => {
 
     )
 }
-export default Terrorist;
+export default withRouter(Terrorist);
