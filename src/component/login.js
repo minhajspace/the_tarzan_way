@@ -46,7 +46,7 @@ class Login extends React.Component {
         }
         else {
             (this.props.history.push("/"))
-            console.log("please enter a volid user name and password")
+            alert("please enter a volid user name and password")
         }
 
     }

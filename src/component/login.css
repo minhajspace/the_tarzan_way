@@ -12,8 +12,8 @@
 .loginbox {
   width: 320px;
   height: 420px;
-  background: black;
-  color: #fff;
+  background: #f3f0ff;
+  color: black;
   top: 50%;
   left: 50%;
   position: absolute;
