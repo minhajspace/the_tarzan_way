@@ -2,23 +2,25 @@ import React from "react";
 import './login.css'
 import { withRouter } from "react-router";
 import Soldier from './Soldier'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Terrorist from './Terrorist'
 
 
 
-const soldier = {
-    email: "soldier@thetarzanway.com",
-    password: "soldier"
-}
-const Terroristdata = {
-    email: "terrorist@thetarzanway.com",
-    password: 'terrorist'
+// const soldier = {
+//     email: "soldier@thetarzanway.com",
+//     password: "soldier"
+// }
+// const Terroristdata = {
+//     email: "terrorist@thetarzanway.com",
+//     password: 'terrorist'
 
-}
+// }
 window.localStorage.setItem("email_soldier", "soldier@thetarzanway.com");
 window.localStorage.setItem("password_soldier", "soldier");
 window.localStorage.setItem("email", "terrorist@thetarzanway.com");
 window.localStorage.setItem("password", "terrorist")
+
 // console.log(localStorage.getItem("email"))
 
 
@@ -26,21 +28,47 @@ class Login extends React.Component {
     state = {
         userName: "",
         password: '',
-        soldier: true
+
     }
     onCheckUserValid = (e) => {
         e.preventDefault();
         const { userName, password } = this.state
 
-        if (userName == localStorage.getItem("email_soldier") && password == localStorage.getItem('password_soldier')) { console.log("you are aurthroized person "); console.log(localStorage.getItem("email_soldier", "password_soldier")); }
 
+        if (userName === localStorage.getItem("email_soldier") && password === localStorage.getItem('password_soldier')) {
+            return (
+                console.log("you are login ")
+            )
+        }
+        else if (userName === localStorage.getItem("email") && password === localStorage.getItem("password")) {
+            return
+            console.log("you are login ")
 
-        else if (userName == Terroristdata.email && password == Terroristdata.password) { console.log("you are aurthroized person "); console.log(userName, password) }
-        else console.log("your cant login  ")
-
-
+        }
+        else {
+            return (<Login />)
+        }
 
     }
+
+    // componentDidMount() {
+    //     const { userName, password } = this.state
+    //     if (userName === localStorage.getItem("email_soldier") && password === localStorage.getItem('password_soldier')) {
+    //         return (<div>
+    //             {<Soldier />}
+    //         </div>)
+    //     }
+    //     else if (userName === localStorage.getItem("email") && password === localStorage.getItem("password")) {
+    //         return (<div>
+    //             {<Terrorist />}
+    //         </div>)
+    //     }
+    //     return (<div>
+    //         <Login />>
+    //     </div>)
+
+
+    // }
     render() {
 
         return (
