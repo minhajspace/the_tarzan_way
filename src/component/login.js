@@ -36,17 +36,17 @@ class Login extends React.Component {
 
 
         if (userName === localStorage.getItem("email_soldier") && password === localStorage.getItem('password_soldier')) {
-            return (
-                console.log("you are login ")
+            (
+                this.props.history.push("/soldier")
             )
         }
         else if (userName === localStorage.getItem("email") && password === localStorage.getItem("password")) {
-            return
-            console.log("you are login ")
+            this.props.history.push("/terrorist")
 
         }
         else {
-            return (<Login />)
+            (this.props.history.push("/"))
+            console.log("please enter a volid user name and password")
         }
 
     }
