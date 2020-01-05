@@ -3,15 +3,30 @@ import { withRouter } from "react-router";
 
 
 
+let blast = ""
+window.localStorage.setItem("boom", "boom is planted now")
+let boom = ""
+let interval;
+let count = 0;
+
+
 class Terrorist extends React.Component {
     state = {
         userInput: "",
-        boom: ''
+        boom: '',
+        timer: ''
     }
 
     onButtoClick = () => {
-        this.setState({ boom: 'Boom is Planted' })
-        console.log(this.state.boom)
+        boom = (localStorage.getItem("boom"))
+        setInterval(() => {
+            count += 1;
+        }, 500)
+        this.setState({ timer: count })
+    }
+    onButtoStop = () => {
+        clearInterval(interval)
+        console.log(interval)
     }
 
 
@@ -21,6 +36,9 @@ class Terrorist extends React.Component {
             <div className="ui segment">
                 <center>
                     <h4>Terrorist Dashboad</h4>
+                    <h4>{boom}</h4>
+                    <h4> {this.state.timer}</h4>
+                    <h4>{blast}</h4>
                     <h1>{this.state.boom}</h1>
                     <div className="ui massive icon input">
                         <input type="text"
@@ -30,6 +48,9 @@ class Terrorist extends React.Component {
 
                         />
                         <button onClick={this.onButtoClick} className="massive ui button">
+                            Click to plant a bomb
+                       </button>
+                        <button onClick={this.onButtoStop} className="massive ui button">
                             Click to plant a bomb
                        </button>
 

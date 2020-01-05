@@ -1,4 +1,5 @@
 import React from 'react';
+import boom from './Terrorist'
 
 import { withRouter } from "react-router";
 
@@ -7,7 +8,9 @@ const Soldier = () => {
 
         <div className="ui segment">
             <center>
-                <h1>Soldier Dashboad</h1>
+                <h4>Soldier Dashboad</h4>
+                <h4>{boom}</h4>
+
 
                 <div className="ui massive icon input" >
                     <input type="text" placeholder="" />

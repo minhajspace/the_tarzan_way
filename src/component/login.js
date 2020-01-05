@@ -45,7 +45,9 @@ class Login extends React.Component {
 
         }
         else {
-            (this.props.history.push("/"))
+            this.setState({ userName: "" })
+            this.setState({ password: "" })
+                (this.props.history.push("/"))
             alert("please enter a volid user name and password")
         }
 
