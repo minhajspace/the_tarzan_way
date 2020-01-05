@@ -13,9 +13,8 @@ const Soldier = () => {
 
 
                 <div className="ui massive icon input" >
-                    <input type="text" placeholder="" />
                     <button className="massive ui button">
-                        Massive
+                        Click to defuse the bomb
 </button>
                 </div>
 

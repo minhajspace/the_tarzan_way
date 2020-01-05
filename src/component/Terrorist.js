@@ -18,15 +18,18 @@ class Terrorist extends React.Component {
     }
 
     onButtoClick = () => {
-        boom = (localStorage.getItem("boom"))
-        interval = setInterval(() => {
-            this.setState({ timer: this.state.timer -= 1 })
+        if (this.state.userInput >= 0 && this.state.userInput <= 100000) {
+            this.setState({ boom: "Boom is planted" })
+        }
+        // boom = (localStorage.getItem("boom"))
+        // interval = setInterval(() => {
+        //     this.setState({ timer: this.state.timer -= 1 })
 
-            if (this.state.timer === 0) {
-                clearInterval(interval)
+        //     if (this.state.timer === 0) {
+        //         clearInterval(interval)
 
-            }
-        }, 50)
+        //     }
+        // }, 50)
     }
 
 
