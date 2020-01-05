@@ -14,20 +14,21 @@ class Terrorist extends React.Component {
     state = {
         userInput: "",
         boom: '',
-        timer: ''
+        timer: 60
     }
 
     onButtoClick = () => {
         boom = (localStorage.getItem("boom"))
-        setInterval(() => {
-            count += 1;
-        }, 500)
-        this.setState({ timer: count })
+        interval = setInterval(() => {
+            this.setState({ timer: this.state.timer -= 1 })
+
+            if (this.state.timer === 0) {
+                clearInterval(interval)
+
+            }
+        }, 50)
     }
-    onButtoStop = () => {
-        clearInterval(interval)
-        console.log(interval)
-    }
+
 
 
     render() {
@@ -48,9 +49,6 @@ class Terrorist extends React.Component {
 
                         />
                         <button onClick={this.onButtoClick} className="massive ui button">
-                            Click to plant a bomb
-                       </button>
-                        <button onClick={this.onButtoStop} className="massive ui button">
                             Click to plant a bomb
                        </button>
 
