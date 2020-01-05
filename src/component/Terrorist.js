@@ -7,7 +7,9 @@ let blast = ""
 window.localStorage.setItem("boom", "boom is planted now")
 let boom = ""
 let interval;
-let count = 0;
+let userInput;
+window.localStorage.setItem("userInput", userInput)
+console.log(window.localStorage.getItem("userInput"))
 
 
 class Terrorist extends React.Component {
@@ -16,20 +18,32 @@ class Terrorist extends React.Component {
         boom: '',
         timer: 60
     }
+    userInput = this.state.userInput
 
     onButtoClick = () => {
         if (this.state.userInput >= 0 && this.state.userInput <= 100000) {
             this.setState({ boom: "Boom is planted" })
+
+
+
+            interval = setInterval(() => {
+                this.setState({ timer: this.state.timer -= 1 })
+                if (this.state.timer === 0)
+                    clearInterval(interval)
+
+            }, 100)
+
+
+
         }
-        // boom = (localStorage.getItem("boom"))
-        // interval = setInterval(() => {
-        //     this.setState({ timer: this.state.timer -= 1 })
+        else {
+            alert("please enter a volid keyword")
+        }
 
-        //     if (this.state.timer === 0) {
-        //         clearInterval(interval)
+    }
 
-        //     }
-        // }, 50)
+    onTestChange = () => {
+
     }
 
 
